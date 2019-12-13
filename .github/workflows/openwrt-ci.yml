@@ -27,10 +27,12 @@ jobs:
 
     steps:
 
-      - name: Checkout
-        uses: actions/checkout@master
-        with:
-          ref: master
+      - name: SSH connection to Actions
+        uses: p3terx/debugger-action@master
+      # - name: Checkout
+        # uses: actions/checkout@master
+        # with:
+          # ref: master
 
       - name: Initialization environment
         env:
