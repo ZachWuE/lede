@@ -35,18 +35,8 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          # docker rmi `docker images -q`
+          docker rmi `docker images -q`
           echo "Deleting files, please wait ..."
-          # deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-          # deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-          # deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-          # deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-          # deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-          # deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-          # deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-          # deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-          # deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-          # deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php
           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
           sudo -E apt-get update
